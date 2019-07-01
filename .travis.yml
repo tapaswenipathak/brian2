@@ -102,7 +102,7 @@ before_install:
 # When we are installing the 32 Bit conda on a 64 Bit system, the miniconda
 # installer will ask for a "yes" despite the -b flag, so we pipe in a yes
 - yes | ./miniconda.sh -b -p ~/miniconda
-- export PATH=~/miniconda/bin:$PATH
+- source ~/miniconda/etc/profile.d/conda.sh
 
 # command to install dependencies
 install:
