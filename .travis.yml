@@ -143,9 +143,9 @@ install:
 script:
 - export MACOSX_DEPLOYMENT_TARGET=10.9  # Prevents build errors linked when using isinf
 - if [[ $DO_CONDA_BUILD == 'yes' ]]; then
-    source deactivate;
+    conda deactivate;
     conda build --quiet -c conda-forge dev/conda-recipe;
-    source activate travis_conda;
+    conda activate travis_conda;
   fi
 - if [[ $DOCS_ONLY == 'yes' ]]; then
     cd dist;
