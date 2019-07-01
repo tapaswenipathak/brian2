@@ -133,7 +133,7 @@ install:
   - if [[ $REPORT_COVERAGE == 'yes' ]]; then PYTHON_PACKAGES="$PYTHON_PACKAGES coveralls"; fi
   # Install packages into a new environment
   - travis_retry conda create --quiet --yes -n travis_conda $PYTHON_PACKAGES
-  - source activate travis_conda
+  - conda activate travis_conda
   - python setup.py install --fail-on-error --single-version-externally-managed --record=record.txt
   - if [[ $DOCS_ONLY == 'yes' ]]; then
       python setup.py sdist;
