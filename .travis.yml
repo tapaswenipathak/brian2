@@ -127,6 +127,8 @@ install:
         PYTHON_PACKAGES="$PYTHON_PACKAGES weave scipy";
       fi;
       PYTHON_PACKAGES="$PYTHON_PACKAGES bsddb";
+      # Enable old packages from the "free" channel for Python 2
+      conda config --set restore_free_channel true;
     else
       PYTHON_PACKAGES="$PYTHON_PACKAGES scipy";
     fi
